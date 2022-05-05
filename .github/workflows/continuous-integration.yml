@@ -45,6 +45,8 @@ jobs:
           php-version: 8.1
 
       - uses: "ramsey/composer-install@2.1.0"
+        with:
+          dependency-versions: "highest"
 
       - name: "Set global composer bin-dir"
         run: composer global config bin-dir /usr/local/bin
