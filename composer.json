@@ -1,0 +1,80 @@
+{
+    "name": "list-interop/convertkit-client",
+    "type": "library",
+    "description": "An API Client for ConvertKit",
+    "keywords": [],
+    "homepage": "https://github.com/list-interop/convertkit-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "George Steel",
+            "email": "george@net-glue.co.uk"
+        }
+    ],
+    "require": {
+        "php": "^7.3 || ~8.0 || ~8.1",
+        "ext-json": "*",
+        "fig/http-message-util": "^1.1",
+        "myclabs/php-enum": "^1.8",
+        "php-http/discovery": "^1.11",
+        "psr/container": "^1 || ^2",
+        "psr/http-client": "^1.0",
+        "psr/http-client-implementation": "*",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.0",
+        "webmozart/assert": "^1.10"
+    },
+    "provide": {
+        "symfony/polyfill-php73": "*"
+    },
+    "require-dev": {
+        "ext-curl": "*",
+        "doctrine/coding-standard": "^9.0",
+        "ergebnis/composer-normalize": "^2.15",
+        "laminas/laminas-diactoros": "^2.6",
+        "php-http/curl-client": "^2.2",
+        "phpunit/phpunit": "^9.5",
+        "psalm/plugin-phpunit": "^0.16.1",
+        "react/child-process": "^0.6.4",
+        "react/http": "^1.6.0",
+        "roave/security-advisories": "dev-latest",
+        "vimeo/psalm": "^4.8"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true
+        }
+    },
+    "extra": {
+        "composer-normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "ListInterop\\ConvertKit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ListInterop\\ConvertKit\\Test\\Unit\\": "test/Unit",
+            "ListInterop\\ConvertKit\\Test\\Integration\\": "test/Integration"
+        }
+    },
+    "scripts": {
+        "check": [
+            "phpcs",
+            "psalm",
+            "phpunit --coverage-xml=build/coverage/coverage-xml --log-junit=build/coverage/junit.xml --exclude-group=Smoke"
+        ],
+        "clean": [
+            "composer normalize",
+            "psalm --clear-cache",
+            "psalm --update-baseline",
+            "phpcbf"
+        ]
+    }
+}
