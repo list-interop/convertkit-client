@@ -32,6 +32,7 @@
         "doctrine/coding-standard": "^9.0",
         "ergebnis/composer-normalize": "^2.15",
         "laminas/laminas-diactoros": "^2.6",
+        "maglnet/composer-require-checker": "^2.1",
         "php-http/curl-client": "^2.2.1",
         "phpunit/phpunit": "^9.5.20",
         "psalm/plugin-phpunit": "^0.16.1",
