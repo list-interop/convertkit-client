@@ -10,7 +10,7 @@
 
 ## Introduction
 
-This is an API Client for the [ConvertKit](https://convertkit.com) mailing list service for PHP versions 7.3 and up
+This is an API Client for the [ConvertKit](https://convertkit.com) mailing list service for PHP versions 7.4 and up
 
 There are several clients available on Packagist, but the main motivation here is being agnostic to the HTTP client in use.
 
