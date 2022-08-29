@@ -14,8 +14,7 @@ use ListInterop\ConvertKit\Value\Tag;
 
 class ClientTest extends RemoteIntegrationTestCase
 {
-    /** @var Client */
-    private $client;
+    private Client $client;
 
     protected function setUp(): void
     {

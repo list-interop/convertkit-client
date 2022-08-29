@@ -19,12 +19,10 @@ use function strtolower;
  */
 final class Tag
 {
-    /** @var int */
-    private $id;
+    private int $id;
     /** @var non-empty-string */
-    private $name;
-    /** @var DateTimeImmutable */
-    private $createdAt;
+    private string $name;
+    private DateTimeImmutable $createdAt;
 
     /** @param non-empty-string $name */
     private function __construct(

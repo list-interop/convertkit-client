@@ -22,33 +22,28 @@ final class MockServer
     public const VALID_KEY = 'valid_key';
     public const VALID_SECRET = 'valid_secret';
 
-    /** @var LoopInterface */
-    private $loop;
-    /** @var HttpServer */
-    private $server;
-    /** @var SocketServer */
-    private $socket;
+    private LoopInterface $loop;
+    private HttpServer $server;
+    private SocketServer $socket;
 
     /**
      * Seconds before the server shuts down automatically
-     *
-     * @var int
      */
-    private $timeout = 10;
+    private int $timeout = 10;
 
     /** @var array<string, array{uri:string, method: string, body: string, type: string, code: int, bodyMatcher: callable|null}> */
-    private $responses;
-    /** @var string */
-    private $basePath;
+    private array $responses;
+    private string $basePath;
 
     public function __construct(int $port, string $basePath)
     {
         $this->basePath = $basePath;
         $this->seedResponses();
         $this->loop = Loop::get();
-        $this->server = new HttpServer($this->loop, function (RequestInterface $request): ResponseInterface {
-            return $this->handleRequest($request);
-        });
+        $this->server = new HttpServer(
+            $this->loop,
+            fn (RequestInterface $request): ResponseInterface => $this->handleRequest($request),
+        );
         $this->socket = new SocketServer(sprintf('0.0.0.0:%d', $port), [], $this->loop);
         $this->server->listen($this->socket);
     }

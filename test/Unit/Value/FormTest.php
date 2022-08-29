@@ -9,8 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class FormTest extends TestCase
 {
-    /** @var Form */
-    private $form;
+    private Form $form;
 
     protected function setUp(): void
     {

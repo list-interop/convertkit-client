@@ -23,24 +23,21 @@ use ListInterop\ConvertKit\Util;
  */
 final class Form
 {
-    /** @var int */
-    private $id;
+    private int $id;
     /** @var non-empty-string */
-    private $name;
-    /** @var DateTimeImmutable */
-    private $createdAt;
+    private string $name;
+    private DateTimeImmutable $createdAt;
     /** @var non-empty-string */
-    private $type;
+    private string $type;
     /** @var non-empty-string|null */
-    private $format;
+    private ?string $format;
     /** @var non-empty-string */
-    private $embedJs;
+    private string $embedJs;
     /** @var non-empty-string */
-    private $embedUrl;
-    /** @var bool */
-    private $archived;
+    private string $embedUrl;
+    private bool $archived;
     /** @var non-empty-string */
-    private $uid;
+    private string $uid;
 
     /**
      * @param non-empty-string      $name
