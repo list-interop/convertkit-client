@@ -30,7 +30,7 @@ final class Util
         $value = str_replace(['z', 'Z'], '+00:00', $value);
         $date = DateTimeImmutable::createFromFormat(
             DateTimeInterface::RFC3339_EXTENDED,
-            $value
+            $value,
         );
 
         Assert::isInstanceOf($date, DateTimeImmutable::class);

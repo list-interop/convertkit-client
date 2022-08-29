@@ -29,14 +29,14 @@
     },
     "require-dev": {
         "ext-curl": "*",
-        "doctrine/coding-standard": "^9.0",
+        "doctrine/coding-standard": "^10.0",
         "ergebnis/composer-normalize": "^2.20.0",
         "laminas/laminas-diactoros": "^2.14.0",
         "php-http/curl-client": "^2.2.1",
-        "phpunit/phpunit": "^9.5.20",
+        "phpunit/phpunit": "^9.5.23",
         "psalm/plugin-phpunit": "^0.17.0",
         "react/child-process": "^0.6.4",
-        "react/http": "^1.6.0",
+        "react/http": "^1.7.0",
         "roave/security-advisories": "dev-latest",
         "vimeo/psalm": "^4.26.0"
     },

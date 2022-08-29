@@ -56,7 +56,7 @@ final class Tag
         return new self(
             $data['id'],
             $data['name'],
-            Util::dateFromString($data['created_at'])
+            Util::dateFromString($data['created_at']),
         );
     }
 

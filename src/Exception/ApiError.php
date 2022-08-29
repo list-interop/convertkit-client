@@ -17,10 +17,10 @@ class ApiError extends ResponseError
             sprintf(
                 'The request to "%s" failed with the code %d',
                 $request->getUri()->getPath(),
-                $response->getStatusCode()
+                $response->getStatusCode(),
             ),
             $request,
-            $response
+            $response,
         );
     }
 }

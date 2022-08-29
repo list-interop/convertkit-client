@@ -75,9 +75,7 @@ final class MockServer
         return new Response($data['code'], ['Content-Type' => $data['type']], $data['body']);
     }
 
-    /**
-     * @return array{uri:string, method: string, body: string, type: string, code: int, bodyMatcher: callable|null}
-     */
+    /** @return array{uri:string, method: string, body: string, type: string, code: int, bodyMatcher: callable|null} */
     private function matchUri(RequestInterface $request): array
     {
         foreach ($this->responses as $data) {

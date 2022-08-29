@@ -54,7 +54,7 @@ final class ClientFactory
             $this->serviceOrNull($container, UriFactoryInterface::class)
                 ?: Psr17FactoryDiscovery::findUriFactory(),
             $this->serviceOrNull($container, StreamFactoryInterface::class)
-                ?: Psr17FactoryDiscovery::findStreamFactory()
+                ?: Psr17FactoryDiscovery::findStreamFactory(),
         );
     }
 
