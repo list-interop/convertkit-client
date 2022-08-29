@@ -29,18 +29,12 @@ final class Client
 {
     protected const BASE_URI = 'https://api.convertkit.com/v3';
 
-    /** @var UriInterface */
-    private $baseUri;
-    /** @var HttpClient */
-    private $httpClient;
-    /** @var RequestFactoryInterface */
-    private $requestFactory;
-    /** @var string */
-    private $apiKey;
-    /** @var StreamFactoryInterface */
-    private $streamFactory;
-    /** @var string */
-    private $apiSecret;
+    private UriInterface $baseUri;
+    private HttpClient $httpClient;
+    private RequestFactoryInterface $requestFactory;
+    private string $apiKey;
+    private StreamFactoryInterface $streamFactory;
+    private string $apiSecret;
 
     /**
      * @param non-empty-string $apiKey
@@ -92,10 +86,7 @@ final class Client
 
     public function createTag(string ...$names): void
     {
-        $makeTag = static function (string $name): array {
-            return ['name' => $name];
-        };
-
+        $makeTag = static fn (string $name): array => ['name' => $name];
         $payload = Util::jsonEncode([
             'tag' => array_map($makeTag, $names),
         ]);

@@ -9,8 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class TagTest extends TestCase
 {
-    /** @var Tag */
-    private $tag;
+    private Tag $tag;
 
     protected function setUp(): void
     {

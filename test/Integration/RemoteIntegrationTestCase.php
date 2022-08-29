@@ -18,16 +18,11 @@ use const CURLOPT_CONNECTTIMEOUT_MS;
 
 abstract class RemoteIntegrationTestCase extends TestCase
 {
-    /** @var int */
-    private static $serverPort;
-    /** @var Process */
-    private static $serverProcess;
-    /** @var HttpClient */
-    private static $httpClient;
-    /** @var RequestFactory */
-    private static $requestFactory;
-    /** @var string */
-    protected static $basePath = '/some/path';
+    private static int $serverPort;
+    private static Process $serverProcess;
+    private static HttpClient $httpClient;
+    private static RequestFactory $requestFactory;
+    protected static string $basePath = '/some/path';
 
     protected function setUp(): void
     {

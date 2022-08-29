@@ -12,7 +12,7 @@
         }
     ],
     "require": {
-        "php": "^7.3 || ~8.0 || ~8.1",
+        "php": "^7.4 || ~8.0 || ~8.1",
         "ext-json": "*",
         "fig/http-message-util": "^1.1",
         "myclabs/php-enum": "^1.8",
@@ -30,8 +30,8 @@
     "require-dev": {
         "ext-curl": "*",
         "doctrine/coding-standard": "^10.0",
-        "ergebnis/composer-normalize": "^2.20.0",
-        "laminas/laminas-diactoros": "^2.14.0",
+        "ergebnis/composer-normalize": "^2.28.3",
+        "laminas/laminas-diactoros": "^2.16.0",
         "php-http/curl-client": "^2.2.1",
         "phpunit/phpunit": "^9.5.23",
         "psalm/plugin-phpunit": "^0.17.0",
@@ -67,9 +67,10 @@
     "scripts": {
         "check": [
             "phpcs",
-            "psalm",
+            "psalm --stats",
             "phpunit --coverage-xml=build/coverage/coverage-xml --log-junit=build/coverage/junit.xml --exclude-group=Smoke"
         ],
+        "static-analysis": "psalm --shepherd --stats",
         "clean": [
             "composer normalize",
             "psalm --clear-cache",
