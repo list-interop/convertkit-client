@@ -37,7 +37,7 @@ class TagTest extends TestCase
     {
         self::assertEquals(
             '2020-01-01 01:23:45 UTC',
-            $this->tag->createdAt()->format('Y-m-d H:i:s T')
+            $this->tag->createdAt()->format('Y-m-d H:i:s T'),
         );
     }
 

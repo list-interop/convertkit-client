@@ -23,9 +23,7 @@ abstract class ResponseError extends RuntimeException implements ConvertKitError
         parent::__construct($message, $code, $previous);
     }
 
-    /**
-     * @return static
-     */
+    /** @return static */
     final protected static function withHttpExchange(
         string $message,
         RequestInterface $request,
@@ -43,7 +41,7 @@ abstract class ResponseError extends RuntimeException implements ConvertKitError
         Assert::isInstanceOf(
             $this->request,
             RequestInterface::class,
-            'This error was not provided a request instance'
+            'This error was not provided a request instance',
         );
 
         return $this->request;
@@ -54,7 +52,7 @@ abstract class ResponseError extends RuntimeException implements ConvertKitError
         Assert::isInstanceOf(
             $this->response,
             ResponseInterface::class,
-            'This error was not provided a response instance'
+            'This error was not provided a response instance',
         );
 
         return $this->response;

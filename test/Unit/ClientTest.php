@@ -32,7 +32,7 @@ class ClientTest extends TestCase
             new RequestFactory(),
             new UriFactory(),
             new StreamFactory(),
-            'http://0.0.0.0'
+            'http://0.0.0.0',
         );
     }
 
@@ -46,7 +46,7 @@ class ClientTest extends TestCase
             new RequestFactory(),
             $factory,
             new StreamFactory(),
-            'http://0.0.0.0/some/path//'
+            'http://0.0.0.0/some/path//',
         );
 
         self::assertEquals('http://0.0.0.0/some/path', (string) $factory->lastUri());

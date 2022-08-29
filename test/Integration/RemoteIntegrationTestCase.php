@@ -38,13 +38,13 @@ abstract class RemoteIntegrationTestCase extends TestCase
     public static function setUpBeforeClass(): void
     {
         self::$httpClient = new HttpClient(
-            new Client(null, null, [CURLOPT_CONNECTTIMEOUT_MS => 100])
+            new Client(null, null, [CURLOPT_CONNECTTIMEOUT_MS => 100]),
         );
         self::$requestFactory = new RequestFactory();
         self::$serverPort = 8089;
         self::$serverProcess = new Process(
             sprintf('exec php %s/run-server.php %d %s', __DIR__, self::$serverPort, self::$basePath),
-            __DIR__
+            __DIR__,
         );
         self::$serverProcess->start();
         usleep(100000);

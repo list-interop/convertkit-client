@@ -20,7 +20,7 @@ class UtilTest extends TestCase
         $date = Util::dateFromString($input);
         self::assertEquals(
             '2021-07-15 20:16:54 UTC',
-            $date->format('Y-m-d H:i:s T')
+            $date->format('Y-m-d H:i:s T'),
         );
 
         $expect = '2021-07-15T20:16:54.000+00:00';

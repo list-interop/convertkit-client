@@ -27,7 +27,7 @@ class ClientTest extends RemoteIntegrationTestCase
             $this->requestFactory(),
             new UriFactory(),
             new StreamFactory(),
-            self::apiServerUri()
+            self::apiServerUri(),
         );
     }
 

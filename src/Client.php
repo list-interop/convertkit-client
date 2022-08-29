@@ -189,7 +189,7 @@ final class Client
     {
         $query = $secretKey ? ['api_secret' => $this->apiSecret] : ['api_key' => $this->apiKey];
         $uri = $this->baseUri->withPath(
-            $this->baseUri->getPath() . $path
+            $this->baseUri->getPath() . $path,
         )->withQuery(http_build_query($query));
 
         return $this->requestFactory->createRequest($method, $uri);
