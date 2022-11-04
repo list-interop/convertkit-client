@@ -20,7 +20,6 @@ use Psr\Http\Message\UriInterface;
 
 use function array_map;
 use function http_build_query;
-use function is_int;
 use function is_string;
 use function rtrim;
 use function sprintf;
@@ -30,11 +29,6 @@ final class Client
     protected const BASE_URI = 'https://api.convertkit.com/v3';
 
     private UriInterface $baseUri;
-    private HttpClient $httpClient;
-    private RequestFactoryInterface $requestFactory;
-    private string $apiKey;
-    private StreamFactoryInterface $streamFactory;
-    private string $apiSecret;
 
     /**
      * @param non-empty-string $apiKey
@@ -42,20 +36,15 @@ final class Client
      * @param non-empty-string $baseUri
      */
     public function __construct(
-        string $apiKey,
-        string $apiSecret,
-        HttpClient $httpClient,
-        RequestFactoryInterface $requestFactory,
+        private string $apiKey,
+        private string $apiSecret,
+        private HttpClient $httpClient,
+        private RequestFactoryInterface $requestFactory,
         UriFactoryInterface $uriFactory,
-        StreamFactoryInterface $streamFactory,
-        string $baseUri = self::BASE_URI
+        private StreamFactoryInterface $streamFactory,
+        string $baseUri = self::BASE_URI,
     ) {
         $this->baseUri = $uriFactory->createUri(rtrim($baseUri, '/'));
-        $this->httpClient = $httpClient;
-        $this->requestFactory = $requestFactory;
-        $this->streamFactory = $streamFactory;
-        $this->apiSecret = $apiSecret;
-        $this->apiKey = $apiKey;
     }
 
     public function findFormById(int $id): Form
@@ -96,7 +85,7 @@ final class Client
         $this->send($request);
     }
 
-    public function findTagByName(string $name): ?Tag
+    public function findTagByName(string $name): Tag|null
     {
         foreach ($this->tagList() as $tag) {
             if (! $tag->matches($name)) {
@@ -114,7 +103,7 @@ final class Client
      * @param non-empty-string|null      $firstName
      * @param list<non-empty-string|int> $tagNames
      */
-    public function subscribeToForm(int $formId, string $email, ?string $firstName, array $tagNames): void
+    public function subscribeToForm(int $formId, string $email, string|null $firstName, array $tagNames): void
     {
         Assert::email($email);
         $path = sprintf('/forms/%d/subscribe', $formId);
@@ -138,10 +127,10 @@ final class Client
      * @param int|non-empty-string $value
      * @param list<Tag>            $tags
      */
-    private function findTagIn($value, array $tags): ?Tag
+    private function findTagIn(int|string $value, array $tags): Tag|null
     {
         foreach ($tags as $tag) {
-            if (is_int($value) && $tag->id() === $value) {
+            if ($tag->id() === $value) {
                 return $tag;
             }
 

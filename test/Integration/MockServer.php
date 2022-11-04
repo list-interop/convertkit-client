@@ -33,11 +33,9 @@ final class MockServer
 
     /** @var array<string, array{uri:string, method: string, body: string, type: string, code: int, bodyMatcher: callable|null}> */
     private array $responses;
-    private string $basePath;
 
-    public function __construct(int $port, string $basePath)
+    public function __construct(int $port, private string $basePath)
     {
-        $this->basePath = $basePath;
         $this->seedResponses();
         $this->loop = Loop::get();
         $this->server = new HttpServer(

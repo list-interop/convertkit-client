@@ -10,7 +10,7 @@ use Psr\Http\Message\UriInterface;
 
 final class UriFactory implements UriFactoryInterface
 {
-    private ?UriInterface $lastUri = null;
+    private UriInterface|null $lastUri = null;
 
     public function createUri(string $uri = ''): UriInterface
     {
@@ -19,7 +19,7 @@ final class UriFactory implements UriFactoryInterface
         return $this->lastUri;
     }
 
-    public function lastUri(): ?UriInterface
+    public function lastUri(): UriInterface|null
     {
         return $this->lastUri;
     }
