@@ -62,8 +62,7 @@ final class Util
         }
     }
 
-    /** @param mixed $value */
-    public static function jsonEncode($value): string
+    public static function jsonEncode(mixed $value): string
     {
         try {
             return json_encode($value, JSON_THROW_ON_ERROR);

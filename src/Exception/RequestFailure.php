@@ -13,7 +13,7 @@ use function sprintf;
 
 final class RequestFailure extends RuntimeException implements ConvertKitError
 {
-    private ?RequestInterface $request = null;
+    private RequestInterface|null $request = null;
 
     public static function withPsrError(RequestInterface $request, PsrHttpError $error): self
     {

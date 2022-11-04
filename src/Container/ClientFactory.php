@@ -65,7 +65,7 @@ final class ClientFactory
      *
      * @psalm-template T
      */
-    private function serviceOrNull(ContainerInterface $container, string $serviceName): ?object
+    private function serviceOrNull(ContainerInterface $container, string $serviceName): object|null
     {
         /** @psalm-var T|null $service */
         $service = $container->has($serviceName)

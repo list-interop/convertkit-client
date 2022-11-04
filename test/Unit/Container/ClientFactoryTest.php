@@ -88,12 +88,8 @@ class ClientFactoryTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $get
-     *
-     * @dataProvider erroneousConfig
-     */
-    public function testThatTheContainerMustHaveConfiguration(bool $has, $get, string $expectedErrorMessage): void
+    /** @dataProvider erroneousConfig */
+    public function testThatTheContainerMustHaveConfiguration(bool $has, mixed $get, string $expectedErrorMessage): void
     {
         $this->container->expects(self::once())
             ->method('has')

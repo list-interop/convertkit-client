@@ -23,22 +23,6 @@ use ListInterop\ConvertKit\Util;
  */
 final class Form
 {
-    private int $id;
-    /** @var non-empty-string */
-    private string $name;
-    private DateTimeImmutable $createdAt;
-    /** @var non-empty-string */
-    private string $type;
-    /** @var non-empty-string|null */
-    private ?string $format;
-    /** @var non-empty-string */
-    private string $embedJs;
-    /** @var non-empty-string */
-    private string $embedUrl;
-    private bool $archived;
-    /** @var non-empty-string */
-    private string $uid;
-
     /**
      * @param non-empty-string      $name
      * @param non-empty-string      $type
@@ -48,25 +32,16 @@ final class Form
      * @param non-empty-string      $uid
      */
     private function __construct(
-        int $id,
-        string $name,
-        DateTimeImmutable $createdAt,
-        string $type,
-        ?string $format,
-        string $embedJs,
-        string $embedUrl,
-        bool $archived,
-        string $uid
+        private int $id,
+        private string $name,
+        private DateTimeImmutable $createdAt,
+        private string $type,
+        private string|null $format,
+        private string $embedJs,
+        private string $embedUrl,
+        private bool $archived,
+        private string $uid,
     ) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->createdAt = $createdAt;
-        $this->type = $type;
-        $this->format = $format;
-        $this->embedJs = $embedJs;
-        $this->embedUrl = $embedUrl;
-        $this->archived = $archived;
-        $this->uid = $uid;
     }
 
     /** @param array<string, mixed> $data */
