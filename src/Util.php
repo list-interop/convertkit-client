@@ -58,7 +58,7 @@ final class Util
 
             return $data;
         } catch (JsonException $e) {
-            throw new RuntimeError('JSON decode failed', (int) $e->getCode(), $e);
+            throw new RuntimeError('JSON decode failed', $e->getCode(), $e);
         }
     }
 
@@ -67,7 +67,7 @@ final class Util
         try {
             return json_encode($value, JSON_THROW_ON_ERROR);
         } catch (JsonException $error) {
-            throw new RuntimeError('JSON encode failed', (int) $error->getCode(), $error);
+            throw new RuntimeError('JSON encode failed', $error->getCode(), $error);
         }
     }
 }
