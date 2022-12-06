@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8aab92df548e473b8828b3f802b1402",
+    "content-hash": "8ef304af4894e309f37675f3d84cfdb6",
     "packages": [
         {
             "name": "clue/stream-filter",
@@ -3274,16 +3274,16 @@
         },
         {
             "name": "psalm/plugin-phpunit",
-            "version": "0.18.3",
+            "version": "0.18.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/psalm/psalm-plugin-phpunit.git",
-                "reference": "057c1cdf7546c1e427f6fd83b635d0cc18c252bf"
+                "reference": "e4ab3096653d9eb6f6d0ea5f4461898d59ae4dbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/psalm/psalm-plugin-phpunit/zipball/057c1cdf7546c1e427f6fd83b635d0cc18c252bf",
-                "reference": "057c1cdf7546c1e427f6fd83b635d0cc18c252bf",
+                "url": "https://api.github.com/repos/psalm/psalm-plugin-phpunit/zipball/e4ab3096653d9eb6f6d0ea5f4461898d59ae4dbc",
+                "reference": "e4ab3096653d9eb6f6d0ea5f4461898d59ae4dbc",
                 "shasum": ""
             },
             "require": {
@@ -3291,7 +3291,7 @@
                 "composer/semver": "^1.4 || ^2.0 || ^3.0",
                 "ext-simplexml": "*",
                 "php": "^7.1 || ^8.0",
-                "vimeo/psalm": "dev-master || dev-4.x || ^4.5 || ^5@beta"
+                "vimeo/psalm": "dev-master || dev-4.x || ^4.7.1 || ^5@beta || ^5.0"
             },
             "conflict": {
                 "phpunit/phpunit": "<7.5"
@@ -3328,9 +3328,9 @@
             "description": "Psalm plugin for PHPUnit",
             "support": {
                 "issues": "https://github.com/psalm/psalm-plugin-phpunit/issues",
-                "source": "https://github.com/psalm/psalm-plugin-phpunit/tree/0.18.3"
+                "source": "https://github.com/psalm/psalm-plugin-phpunit/tree/0.18.4"
             },
-            "time": "2022-11-03T18:17:28+00:00"
+            "time": "2022-12-03T07:47:07+00:00"
         },
         {
             "name": "psr/log",
@@ -4262,12 +4262,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "891ecbb72eac808c80fb97f2cce67824e94e5652"
+                "reference": "ae7d78fff43ae2c157a04b71f21c58d5009629ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/891ecbb72eac808c80fb97f2cce67824e94e5652",
-                "reference": "891ecbb72eac808c80fb97f2cce67824e94e5652",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ae7d78fff43ae2c157a04b71f21c58d5009629ba",
+                "reference": "ae7d78fff43ae2c157a04b71f21c58d5009629ba",
                 "shasum": ""
             },
             "conflict": {
@@ -4579,6 +4579,7 @@
                 "ptrofimov/beanstalk_console": "<1.7.14",
                 "pusher/pusher-php-server": "<2.2.1",
                 "pwweb/laravel-core": "<=0.3.6-beta",
+                "pyrocms/pyrocms": "<=3.9.1",
                 "rainlab/debugbar-plugin": "<3.1",
                 "rankmath/seo-by-rank-math": "<=1.0.95",
                 "react/http": ">=0.7,<1.7",
@@ -4690,7 +4691,7 @@
                 "topthink/framework": "<=6.0.13",
                 "topthink/think": "<=6.0.9",
                 "topthink/thinkphp": "<=3.2.3",
-                "tribalsystems/zenario": "<=9.3.57186",
+                "tribalsystems/zenario": "<=9.3.57595",
                 "truckersmp/phpwhois": "<=4.3.1",
                 "twig/twig": "<1.44.7|>=2,<2.15.3|>=3,<3.4.3",
                 "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.32|>=8,<8.7.38|>=9,<9.5.29|>=10,<10.4.32|>=11,<11.5.16",
@@ -4797,7 +4798,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-02T23:04:13+00:00"
+            "time": "2022-12-05T19:04:07+00:00"
         },
         {
             "name": "sebastian/cli-parser",
