@@ -71,7 +71,6 @@ final class Tag
         return $this->createdAt;
     }
 
-    /** @psalm-assert-if-true non-empty-string $value */
     public function matches(string $value): bool
     {
         return strtolower($this->name) === strtolower($value);
