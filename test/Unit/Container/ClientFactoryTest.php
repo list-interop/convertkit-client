@@ -27,6 +27,7 @@ class ClientFactoryTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $this->factory = new ClientFactory();
         $this->container = $this->createMock(ContainerInterface::class);
     }
