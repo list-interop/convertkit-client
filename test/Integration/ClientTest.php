@@ -19,6 +19,7 @@ class ClientTest extends RemoteIntegrationTestCase
     protected function setUp(): void
     {
         parent::setUp();
+
         $this->client = new Client(
             MockServer::VALID_KEY,
             MockServer::VALID_SECRET,
