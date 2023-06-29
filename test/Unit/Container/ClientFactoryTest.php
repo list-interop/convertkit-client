@@ -21,8 +21,7 @@ use Psr\Http\Message\UriFactoryInterface;
 class ClientFactoryTest extends TestCase
 {
     private ClientFactory $factory;
-    /** @var MockObject&ContainerInterface */
-    private $container;
+    private ContainerInterface&MockObject $container;
 
     protected function setUp(): void
     {

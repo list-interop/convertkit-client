@@ -17,8 +17,7 @@ use Psr\Http\Client\NetworkExceptionInterface;
 class ClientTest extends TestCase
 {
     private Client $client;
-    /** @var MockObject&ClientInterface */
-    private $httpClient;
+    private ClientInterface&MockObject $httpClient;
 
     protected function setUp(): void
     {
