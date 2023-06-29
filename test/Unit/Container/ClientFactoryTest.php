@@ -8,6 +8,7 @@ use Http\Client\Curl\Client;
 use Laminas\Diactoros\RequestFactory;
 use Laminas\Diactoros\StreamFactory;
 use Laminas\Diactoros\UriFactory;
+use ListInterop\ConvertKit\Client as ConvertKitClient;
 use ListInterop\ConvertKit\Container\ClientFactory;
 use ListInterop\ConvertKit\Exception\AssertionFailed;
 use PHPUnit\Framework\MockObject\MockObject;
@@ -32,7 +33,7 @@ class ClientFactoryTest extends TestCase
     }
 
     /** @return array<string, array{0: bool, 1: mixed, 2: string}> */
-    public function erroneousConfig(): array
+    public static function erroneousConfig(): array
     {
         return [
             'No Config' => [
@@ -108,7 +109,7 @@ class ClientFactoryTest extends TestCase
 
         $this->expectException(AssertionFailed::class);
         $this->expectExceptionMessage($expectedErrorMessage);
-        ($this->factory)($this->container);
+        $this->factory->__invoke($this->container);
     }
 
     public function testClientCreationWillProceedWhenTheContainerHasAllRequiredDependencies(): void
@@ -127,7 +128,8 @@ class ClientFactoryTest extends TestCase
                 [StreamFactoryInterface::class, new StreamFactory()],
             ]);
 
-        ($this->factory)($this->container);
+        $client = $this->factory->__invoke($this->container);
+        self::assertInstanceOf(ConvertKitClient::class, $client);
     }
 
     public function testClientCreationWillProceedWhenOnlyConfigIsAvailable(): void
@@ -145,7 +147,7 @@ class ClientFactoryTest extends TestCase
             ->method('get')
             ->willReturn(['convertkit' => ['api-key' => 'foo', 'secret-key' => 'bar']]);
 
-        ($this->factory)($this->container);
+        $this->factory->__invoke($this->container);
     }
 
     public function testAnAssertionErrorWillBeThrownWhenTheContainerSendsSomethingWeird(): void
@@ -162,6 +164,6 @@ class ClientFactoryTest extends TestCase
             ]);
 
         $this->expectException(AssertionFailed::class);
-        ($this->factory)($this->container);
+        $this->factory->__invoke($this->container);
     }
 }

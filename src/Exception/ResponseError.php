@@ -10,18 +10,22 @@ use Psr\Http\Message\ResponseInterface;
 use RuntimeException;
 use Throwable;
 
-/** @internal */
 abstract class ResponseError extends RuntimeException implements ConvertKitError
 {
     protected RequestInterface|null $request = null;
     protected ResponseInterface|null $response = null;
 
+    /** @internal */
     final public function __construct(string $message, int $code, ?Throwable $previous = null) // phpcs:ignore
     {
         parent::__construct($message, $code, $previous);
     }
 
-    /** @return static */
+    /**
+     * @internal
+     *
+     * @return static
+     */
     final protected static function withHttpExchange(
         string $message,
         RequestInterface $request,
