@@ -33,7 +33,7 @@
         "ergebnis/composer-normalize": "^2.31",
         "laminas/laminas-diactoros": "^3.0.0",
         "php-http/curl-client": "^2.3",
-        "phpunit/phpunit": "^9.6.9",
+        "phpunit/phpunit": "^10.0.0",
         "psalm/plugin-phpunit": "^0.18.4",
         "react/child-process": "^0.6.5",
         "react/http": "^1.9",
