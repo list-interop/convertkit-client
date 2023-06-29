@@ -34,9 +34,4 @@ final class HttpClient implements ClientInterface
     {
         return $this->lastRequest;
     }
-
-    public function lastResponse(): ResponseInterface|null
-    {
-        return $this->lastResponse;
-    }
 }
