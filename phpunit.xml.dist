@@ -2,9 +2,17 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
          bootstrap="vendor/autoload.php"
-         cacheResultFile=".cache/test-results"
+         cacheDirectory=".cache/phpunit"
          failOnWarning="true"
-         verbose="true">
+         failOnNotice="true"
+         failOnDeprecation="true"
+         displayDetailsOnSkippedTests="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerNotices="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnIncompleteTests="true"
+>
     <testsuites>
         <testsuite name="Unit">
             <directory>test/Unit</directory>
@@ -14,10 +22,9 @@
         </testsuite>
     </testsuites>
 
-    <coverage cacheDirectory=".cache/code-coverage"
-              processUncoveredFiles="true">
+    <source>
         <include>
             <directory suffix=".php">src</directory>
         </include>
-    </coverage>
+    </source>
 </phpunit>

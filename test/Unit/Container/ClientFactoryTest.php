@@ -32,7 +32,7 @@ class ClientFactoryTest extends TestCase
     }
 
     /** @return array<string, array{0: bool, 1: mixed, 2: string}> */
-    public function erroneousConfig(): array
+    public static function erroneousConfig(): array
     {
         return [
             'No Config' => [
