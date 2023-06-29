@@ -29,16 +29,16 @@
     },
     "require-dev": {
         "ext-curl": "*",
-        "doctrine/coding-standard": "^11.0",
-        "ergebnis/composer-normalize": "^2.29",
-        "laminas/laminas-diactoros": "^2.22",
-        "php-http/curl-client": "^2.2.1",
-        "phpunit/phpunit": "^9.5.27",
+        "doctrine/coding-standard": "^11.1",
+        "ergebnis/composer-normalize": "^2.31",
+        "laminas/laminas-diactoros": "^2.25.2",
+        "php-http/curl-client": "^2.3",
+        "phpunit/phpunit": "^9.6.9",
         "psalm/plugin-phpunit": "^0.18.4",
         "react/child-process": "^0.6.5",
-        "react/http": "^1.8",
+        "react/http": "^1.9",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^5.2"
+        "vimeo/psalm": "^5.13.1"
     },
     "conflict": {
         "symfony/options-resolver": "<5.3.7"
@@ -47,7 +47,8 @@
         "sort-packages": true,
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "ergebnis/composer-normalize": true
+            "ergebnis/composer-normalize": true,
+            "php-http/discovery": false
         },
         "platform": {
             "php": "8.0.99"
