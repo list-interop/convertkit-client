@@ -8,6 +8,7 @@ use DateTimeImmutable;
 use ListInterop\ConvertKit\Assert;
 use ListInterop\ConvertKit\Util;
 
+use function assert;
 use function strtolower;
 
 /**
@@ -37,6 +38,7 @@ final class Tag
         Assert::integer($data['id']);
 
         foreach (['name', 'created_at'] as $key) {
+            assert(isset($data[$key]));
             Assert::string($data[$key]);
             Assert::notEmpty($data[$key]);
         }

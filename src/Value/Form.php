@@ -8,6 +8,8 @@ use DateTimeImmutable;
 use ListInterop\ConvertKit\Assert;
 use ListInterop\ConvertKit\Util;
 
+use function assert;
+
 /**
  * @psalm-type FormArray = array{
  *     id: int,
@@ -56,6 +58,7 @@ final class Form
         Assert::boolean($data['archived']);
 
         foreach (['name', 'created_at', 'type', 'embed_js', 'embed_url', 'uid'] as $key) {
+            assert(isset($data[$key]));
             Assert::string($data[$key]);
             Assert::notEmpty($data[$key]);
         }
