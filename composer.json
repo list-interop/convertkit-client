@@ -30,15 +30,15 @@
     "require-dev": {
         "ext-curl": "*",
         "doctrine/coding-standard": "^12.0",
-        "ergebnis/composer-normalize": "^2.31",
-        "laminas/laminas-diactoros": "^3.0.0",
-        "php-http/curl-client": "^2.3",
-        "phpunit/phpunit": "^10.2.2",
+        "ergebnis/composer-normalize": "^2.41.1",
+        "laminas/laminas-diactoros": "^3.3.0",
+        "php-http/curl-client": "^2.3.1",
+        "phpunit/phpunit": "^10.5.5",
         "psalm/plugin-phpunit": "^0.18.4",
         "react/child-process": "^0.6.5",
         "react/http": "^1.9",
         "roave/security-advisories": "dev-latest",
-        "vimeo/psalm": "^5.13.1"
+        "vimeo/psalm": "^5.18.0"
     },
     "conflict": {
         "symfony/options-resolver": "<5.3.7"
