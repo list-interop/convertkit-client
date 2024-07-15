@@ -23,7 +23,7 @@ jobs:
           extensions: pcov
           coverage: pcov
           ini-values: pcov.enabled=1
-      - uses: "ramsey/composer-install@3.0.0"
+      - uses: "ramsey/composer-install@2.3.1"
         with:
           dependency-versions: "highest"
       - run: php ./vendor/bin/phpunit --coverage-clover=coverage.xml
