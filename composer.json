@@ -29,7 +29,7 @@
     },
     "require-dev": {
         "ext-curl": "*",
-        "doctrine/coding-standard": "^12.0",
+        "doctrine/coding-standard": "^14.0",
         "ergebnis/composer-normalize": "^2.41.1",
         "laminas/laminas-diactoros": "^3.3.0",
         "php-http/curl-client": "^2.3.1",
